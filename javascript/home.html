@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>first practice for javascript</title>
+    <script type="text/javascript">
+        function Uploader(){
+            window.document.images[0].src="../images/html5.png";
+            window.document.forms[0].elements[1].value="Register";
+            window.document.forms[1].elements[1].value="sign up";
+        }
+    </script>
+</head>
+<body onload="Uploader()">
+    <div>
+        <img width="100" height="100"  alt="pic-1"/>
+    </div>
+    <div>
+        <form>
+            <h2>register</h2>
+            Email: <input type="email"><input type="button">
+        </form>
+    </div>
+    <div>
+        <form>
+            <h2>sign</h2>
+            mobile : <input type="text"> <input type="button">
+        </form>
+    </div>
+</body>
+</html>
