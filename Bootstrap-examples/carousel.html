@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Example</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    
+</head>
+<body class="container-fluid  mt-2">
+    <div class="carousel slide carousel-dark" data-bs-ride="carousel" id="banner" >
+        <div class="carousel-inner ">
+            <div class="carousel-item active" data-bs-interval="1000">
+                <img src="../../images/slid1.png" class="w-100 d-block">
+            </div>
+            <div class="carousel-item " data-bs-interval="1000">
+                <div class="card p-2">
+                    <img src="../../images/Four.jpeg" height="400" class="w-50">
+                    <div class="card-header">
+                       <h2>Nike Casuals</h2> 
+                    </div>
+                    <div class="card-body">
+                        <dl>
+                            <dt>Price</dt>
+                            <dd>4400.00</dd>
+                            <dt>Rating</dt>
+                            <dd>5.0</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <div class="d-flex justify-content-center align-items-center" style="height:300px;">
+                    <form>
+                        <p>Register for More Offers</p>
+                        <div class="input-group">
+                            <input type="email" class="form-control">
+                            <button class="btn btn-primary">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="../../images/slid2.png" class="w-100 d-block">
+            </div>
+            <div class="carousel-item" data-bs-interval="120">
+                <img src="../../images/slid3.png" class="w-100 d-block">
+            </div>
+        </div>
+        <div >
+            <button data-bs-slide="prev" data-bs-target="#banner" class="carousel-control-prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button data-bs-slide="next" data-bs-target="#banner" class="carousel-control-next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            <div class="carousel-indicators">
+                <button  class="active" data-bs-slide-to="0" data-bs-target="#banner"></button>
+                <button data-bs-slide-to="1" data-bs-target="#banner"></button>
+                <button data-bs-slide-to="2" data-bs-target="#banner"></button>
+                <button data-bs-slide-to="3" data-bs-target="#banner"></button>
+                <button data-bs-slide-to="4" data-bs-target="#banner"></button>
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>
