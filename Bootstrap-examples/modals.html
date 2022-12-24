@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Example</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    
+</head>
+<body class="container-fluid  mt-2">
+    <button data-bs-target="#login" data-bs-toggle="modal" class="btn btn-primary">Login</button>
+    <button data-bs-target="#preview" data-bs-toggle="modal" class="btn btn-success">Product Preview</button>
+    <a href="#login" data-bs-toggle="modal">Login</a>
+    <!--Login Modal-->
+    <div class="modal fade" id="login">
+        <div class="modal-dialog modal-fullscreen modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>User Login</h2>
+                    <button data-bs-dismiss="modal" class="btn-close"></button>
+                </div>
+                <div class="modal-body">
+                        <dl>
+                            <dt>User Name</dt>
+                            <dd><input type="text" class="form-control"></dd>
+                            <dt>Password</dt>
+                            <dd><input type="password" class="form-control"></dd>
+                            <dt>User Name</dt>
+                            <dd><input type="text" class="form-control"></dd>
+                            <dt>Password</dt>
+                            <dd><input type="password" class="form-control"></dd>
+                            <dt>User Name</dt>
+                            <dd><input type="text" class="form-control"></dd>
+                            <dt>Password</dt>
+                            <dd><input type="password" class="form-control"></dd>
+                            <dt>User Name</dt>
+                            <dd><input type="text" class="form-control"></dd>
+                            <dt>Password</dt>
+                            <dd><input type="password" class="form-control"></dd>
+                            <dt>User Name</dt>
+                            <dd><input type="text" class="form-control"></dd>
+                            <dt>Password</dt>
+                            <dd><input type="password" class="form-control"></dd>
+                            <dt>User Name</dt>
+                            <dd><input type="text" class="form-control"></dd>
+                            <dt>Password</dt>
+                            <dd><input type="password" class="form-control"></dd>
+                        </dl>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Login</button>
+                    <button data-bs-dismiss="modal" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Product Modal-->
+    <div class="modal fade" id="preview">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Product Preview</h2>
+                        <button data-bs-dismiss="modal" class="btn-close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card p-2" style="width: 200px;">
+                            <img src="../../images/helmet.jpg" class="card-img-top" height="100">
+                            <div class="card-header">
+                                <h3>Winter Jacket</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>
