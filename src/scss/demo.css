@@ -1,0 +1,15 @@
+.container {
+  background-color: green;
+  color: yellow;
+  padding: 20px;
+  border: 2px solid yellow;
+}
+
+.container {
+  background-color: gray;
+  color: black;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+/*# sourceMappingURL=demo.css.map */

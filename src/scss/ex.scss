@@ -1,0 +1,13 @@
+$border: 5px; 
+
+@function SetBorder($newBorder)
+{
+    @return $border + $newBorder;
+}
+
+.container {
+    border: SetBorder(5px);
+    h2 {
+        border:SetBorder(2px);
+    }
+}

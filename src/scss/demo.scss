@@ -1,0 +1,11 @@
+
+@mixin SetEffects($bgcolor, $textcolor) {
+    .container {
+        background-color: $bgcolor;
+        color:$textcolor;
+        padding: 20px;
+        border: 2px solid $textcolor;
+    }
+}
+@include SetEffects(green, yellow);
+@include SetEffects(gray, black);

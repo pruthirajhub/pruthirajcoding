@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bootstrap Example</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <style>
+            .nav-link{
+                color:white;
+            }
+            .nav-link:hover{
+                color:white; 
+            }
+        </style>
+    </head>
+    <body class="container-fluid  mt-2">
+        <div class="bg-dark text-white p-2">
+            <span>HDFC Bank</span>
+            <ul class="nav nav-tabs">
+                <li class="nav-item active"><a href="#personal" data-bs-toggle="tab" class="nav-link"><span class="nav-text">Personal</span></a></li>
+                <li class="nav-item"><a href="#nri" data-bs-toggle="tab" class="nav-link">NRI</a></li>
+                <li class="nav-item"><a href="#sme" data-bs-toggle="tab" class="nav-link">SME</a></li>
+                <li class="nav-item"><a href="#agri" data-bs-toggle="tab" class="nav-link">Agri</a></li>
+            </ul>
+           
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active fade show" id="personal">
+                <h2>Personal Banking </h2>
+                <p>It is or general users with saving account</p>
+            </div>
+            <div class="tab-pane fade " id="nri">
+                <h2>NRI Banking </h2>
+                <p>It is or NRI users account</p>
+            </div>
+            <div class="tab-pane" id="sme">
+                <h2>SME Banking </h2>
+                <p>Loans and EMI</p>
+            </div>
+            <div class="tab-pane" id="agri">
+                <h2>AGRI</h2>
+                <p>It is for govt schemes.</p>
+            </div>
+        </div>
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    </body> 
+</html>
