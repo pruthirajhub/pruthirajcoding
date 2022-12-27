@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Input</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            function CreateClick(){
+               folderName = document.getElementById("txtFolder").value;
+               if(folderName==""){
+                alert("Please Provide Folder Name");
+               } else {
+                document.querySelector("p").innerHTML += "Folder Created : " + folderName + "<br>";
+                document.getElementById("txtFolder").value="";
+               }
+            }
+        </script>
+    </head>
+    <body class="container-fluid mt-3">
+       <div class="input-group">
+            <span class="input-group-text">Folder Name</span>
+            <input class="form-control" id="txtFolder" type="text">
+            <button onclick="CreateClick()" class="btn btn-primary">Create</button>
+       </div>
+       <p class="mt-3"></p>
+    </body>
+</html> 
