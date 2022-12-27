@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic</title>
+        <script>
+            function AddClick() {
+             pic = document.createElement("img");
+             pic.width = "100";
+             pic.height = "100";
+             pic.border ="1";
+             pic.src = "../../images/pic.JPG";
+             document.getElementById("container").appendChild(pic); 
+
+             option =  document.createElement("option");
+             option.text = "Odisha";
+             option.value = "Odisha";
+             document.querySelector("select").appendChild(option);
+
+             li = document.createElement("li");
+             li.innerHTML = "HTML TUT";
+             document.querySelector("ol").appendChild(li);
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="AddClick()">Add Elements</button>
+        <div id="container">
+
+        </div>
+        <select>
+            
+        </select>
+        <ol>
+
+        </ol>
+    </body>
+</html>
