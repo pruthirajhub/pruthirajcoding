@@ -1,0 +1,66 @@
+<script>
+    document.write("true+true = " + (true+true));
+</script>
+<hr>
+<script>
+    var stock = true;
+    if(stock==true){
+        document.write("Available");
+    }else {
+        document.write("Out of stock");
+    }
+</script>
+<hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function StockChange(){
+            var otiStock = document.getElementById("optStock");
+            var lblStock = document.getElementById("lblStock");
+            if(optStock.checked==true){
+                lblStock.innerHTML = "Available";
+            }else {
+                lblStock.innerHTML = "Out Of Stock";
+            }
+        }
+        function termsChange(){
+            var optTerms = document.getElementById("optTerms");
+            var btnSubmit = document.getElementById("btnSubmit");
+            if(optTerms.checked==true){
+               // btnSubmit.style.display = "block";
+               btnSubmit.disabled = false;
+            }else{
+               // btnSubmit.style.display = "none";
+               btnSubmit.disabled =true;
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <h2>Product Details</h2>
+    <dl>
+        <dt>Name</dt>
+        <dd>Samsung Tv</dd>
+        <dt>Price</dt>
+        <dd>&#8377;45000.00</dd>
+        <dt>Stock</dt>
+        <dd class="form-switch">
+            <input type="checkbox" checked id="optStock" onchange="StockChange()" class="form-check-input"><span id="lblStock">Available</span>
+        </dd>
+        <dt>Terms of Services</dt>
+        <dd>
+            <textarea>Terms Of Service.....</textarea>
+        </dd>
+        <dd>
+            <input id="optTerms" onchange="termsChange()" type="checkbox"><span>I Accept</span>
+        </dd>
+    </dl>
+    <button id="btnSubmit" disabled class="btn btn-primary">Submit</button>
+</body>
+</html>

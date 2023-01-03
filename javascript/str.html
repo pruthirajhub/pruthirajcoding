@@ -1,0 +1,82 @@
+<script>
+    var str = "Welcome to Javascript";
+    document.write(str.slice(0,7) + "<br>");
+    document.write(str.substr(0,7) + "<br>");
+    document.write(str.substring(0,7) + "<br>");
+</script>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            function GetDetails(){
+                var email = document.getElementById("txtEmail").value;
+                var atpos = email.indexOf("@");
+                var email_id = email.slice(0,atpos);
+                var domain = email.substring(atpos+1);
+                document.write(`
+                    Your Email ID : ${email_id} <br>
+                    Registered @ : ${domain}
+                `); 
+            }
+            function VerifyId(){
+                var userid = document.getElementById("txtId").value;
+                if(userid.trim()=="john_nit"){
+                    document.write("Login Success");
+                } else {
+                    alert("Invalid User ID");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Your Email:
+        <input type="text" onblur="GetDetails()" id="txtEmail"><hr>
+        Your UserId:
+        <input type="text" onblur="VerifyId()" id="txtId">
+    </body>
+</html>
+<hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyPassword(){
+            var password = document.getElementById("password").value;
+            var regExp = /(?=.*[A-Z])\w{4,15}/;
+            var msg = document.getElementById("msg");
+            if(password.match(regExp)){
+                msg.innerHTML = "";
+            }else{
+                msg.innerHTML = "Password 4 to 15 chars with at least 1 uppercase letter".fontcolor('green');
+            }
+        }
+        function VerifyName(){
+            var UserName = document.getElementById("UserName").value;
+            var userMsg = document.getElementById("userMsg")
+            if(UserName.length > 10){
+                userMsg.innerHTML = "Name max 10 chars only".fontcolor('red');
+            }else{
+                userMsg.innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>UserName</dt>
+        <dd><input onkeyup="VerifyName()" type="text" id="UserName"></dd>
+        <dd id="userMsg"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id="password" onkeyup="VerifyPassword()"></dd>
+        <dd id="msg"></dd>
+    </dl>
+</body>
+</html>

@@ -21,3 +21,63 @@
     document.write(login);
     document.write(login);
 </script>
+<br>
+<script>
+    var path = "\"D:\\practice file\\images\\my pic2.JPG\"";
+    document.write(path);
+</script>
+</br>
+<script>
+    var msg = "Welcome To Javascript";
+    document.write(msg.fontsize('7').bold().fontcolor('green').italics());
+</script>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script type="text/javascript">
+            function ChangeColor(){
+                var msg = document.getElementById("msg");
+                var color = document.getElementById("1stcolor").value;
+                msg.innerHTML = "<h1>Welcome to javascript</h1>".fontcolor(color);
+
+            }
+            function ChangeCase(){
+                var name = document.getElementById("txtName").value;
+                document.getElementById("txtName").value = name.toUpperCase();
+
+            }
+            function VerifyName(){
+                var name = document.getElementById("txtName").value;
+                var userError = document.getElementById("userError");
+                if(name==""){
+                    userError.innerHTML = "User Name Required".fontcolor('red');
+                }else {
+                    userError.innerHTML = "";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <dl>
+            <dt>User Name</dt>
+            <dd>
+                <input type="text" onblur="VerifyName()" onkeyup="ChangeCase()" placeholder="Block Letters" id="txtName">
+            </dd>
+            <dd id="userError"></dd>
+            <dt>Font Color</dt>
+            <dd>
+                <select id="1stcolor" onchange="ChangeColor()">
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </select>
+            </dd>
+            <dt>Sample Text</dt>
+            <dd id="msg"></dd>
+        </dl>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function VerifyCard(){
+            var cardImg = document.getElementById("cardImg");
+            var card = document.getElementById("txtCard").value;
+            if(card.startsWith("4444")){
+                cardImg.src="../../images/carcover.jpg";
+            } else {
+                cardImg.src="../../images/carfresh.jpg";
+            }
+        }
+        function VerifyEmail(){
+            var lblEmail = document.getElementById("lblEmail");
+            var email = document.getElementById("txtEmail").value;
+            if(email.endsWith("gmail.com")){
+                lblEmail.innerHTML = "";
+            } else{
+                lblEmail.innerHTML = "Only Gmail Allowed".fontcolor('red ');
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <fieldset>
+        <legend>Payment Details</legend>
+        <dl>
+            <dt>Card Number</dt>
+            <dd class="input-group">
+                <input type="text" onkeyup="VerifyCard()" id="txtCard" class="form-control">
+                <img id="cardImg" width="80" height="40">
+            </dd>
+            <dt>Your Gmail</dt>
+            <dd>
+                <input type="text" onblur="VerifyEmail()" id="txtEmail" class="form-control">
+            </dd>
+            <dd id="lblEmail"></dd>
+        </dl>
+    </fieldset>
+</body>
+</html>
