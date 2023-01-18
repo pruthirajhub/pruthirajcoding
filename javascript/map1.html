@@ -1,0 +1,58 @@
+<script>
+    var product = {
+        Name: "Samsung TV",
+        Price : 45000.44,
+        Stock: true,
+        Rating : 3.5
+    }
+    // delete product.Stock;
+    // for(var property in product) {
+    //     document.write(`${property} : ${product[property]}<br>`);
+    // }
+    if("Rating" in product){
+        document.write("Rating : " + product.Rating);
+    }else {
+        document.write("Rating Not Available");
+    }
+</script>
+<br><hr>
+<script>
+    var products = [
+        {Name: "TV",Price: 45000.44, Rating:4.2},
+        {Name: "Watch", Price: 2300.44, Rating:2.5},
+        {Name: "Mobile", Price: 34000.44, Rating:3.3}
+    ];
+    var result = products.filter(function(product){
+        return "Rating" in product;
+    });
+    for(var item of result){
+        document.write(item.Name + "<br>");
+    }
+</script>
+<br><hr>
+<script>
+    var product = {
+        Name : "Samsung TV",
+        Price : 45000.44,
+        Manufactured : new Date("2002-09-20 01:44:50.40")
+    }
+    document.write(product.Manufactured.toLocaleDateString());
+</script>
+<br><hr>
+<script>
+    var product = {
+        Name : "Samsung TV",
+        Price : 45000.44,
+        Manufactured : new Date("2022-08-15 01:44:50.40")
+    }
+    var weekDays = ["Sun", "Mon", "Tuesday", "wed", "Thr","Fri", "Sat"];
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Opt", "Nov", "Dec"];
+    product.Manufactured.setMonth(1);
+    document.write(`
+    ${weekDays[product.Manufactured.getDay()]}
+    ${product.Manufactured.getDate()} -
+    ${months[product.Manufactured.getMonth()]} -
+    ${product.Manufactured.getFullYear()}
+
+    `)
+</script>

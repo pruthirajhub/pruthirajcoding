@@ -1,0 +1,9 @@
+<script>
+    var topic = new Map();
+    topic.set(1,"It is a markup language");
+    topic.set("CSS" , "It defines styles for HTML");
+    topic.delete(1);
+    for(var item of topic.entries()){
+    document.write(item + "<br>");
+   }
+</script>

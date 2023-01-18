@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fetch API</title>
+        <script>
+            function FetchData(){
+                fetch("../data/Products.json")
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    for(var item of data){
+                        var tr = document.createElement("tr");
+                        var tdName = document.createElement("td");
+                        var tdPrice = document.createElement("td");
+                        tdName.innerHTML = item.Name;
+                        tdPrice.innerHTML = item.Price;
+
+
+                        tr.appendChild(tdName);
+                        tr.appendChild(tdPrice);
+
+                        document.querySelector("tbody").appendChild(tr);
+                    }
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="FetchData()">Fetch Data</button>
+        <br><br>
+        <table width="300" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </body>
+</html>

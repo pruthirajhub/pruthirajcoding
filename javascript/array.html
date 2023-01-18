@@ -1,0 +1,88 @@
+<script>
+    var values = ["C", "D", "A", "B"];
+    values.sort();
+    values.reverse();
+    for (var item of values) {
+        document.write(item + "<br>");
+    }
+</script>
+<hr>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <script>
+            var cities = ["Delhi", "Hyd", "Mumbai"];
+            function LoadCities(){
+                document.getElementById("lstCity").innerHTML = "";   
+                for(var city of cities){
+                    var option = document.createElement("option");
+                    option.text = city;
+                    option.value = city;
+                    document.getElementById("lstCity").appendChild(option);
+                }
+            }
+            function bodyLoad(){
+                LoadCities();
+            }
+            function AddClick(){
+                var cityName = document.getElementById("txtCity").value;
+                if(cities.indexOf(cityName)==-1){
+                    cities.push(cityName);
+                    alert(`${cityName} Added Successfully.. `);
+                    LoadCities();
+                    document.getElementById("txtCity").value = "";
+                }else{
+                    alert(`${cityName} Exist`);
+                }
+            }
+            function RemoveClick(){
+               var selectedCityName = document.getElementById("lstCity").value;
+               var selectedCityIndex = cities.indexOf(selectedCityName);
+               var flag = confirm(`Are you sure want to remove ${selectedCityName}`);
+               if(flag==true){
+                 cities.splice(selectedCityIndex,1);
+                 alert(`${selectedCityName} Removed`);
+                 LoadCities();
+               }
+            }
+            function ClearClick(){
+                document.getElementById("lstCity").innerHTML = "";
+
+            }
+            function SortClick(){
+                cities.sort();
+                LoadCities();
+            }
+        </script>
+    </head>
+    <body class="container-fluid" onload="bodyLoad()">
+        <div class="row">
+            <div class="col-4">
+                <h2>Add city</h2>
+                <div class="input-group">
+                    <input type="text" id="txtCity" class="form-control">
+                    <button onclick="AddClick()" class="btn btn-primary">Add</button>
+                </div>
+                <div class="mt-2">
+                    <label class="form-label">Cities List</label>
+                    <div>
+                        <select id="lstCity" size="3" class="form-select">
+
+                        </select>
+                    </div>
+                    <div class="mt-2">
+                        <button onclick="SortClick()" class="btn btn-primary"><span class="bi bi-arrow-down">Sort</span></button>
+                        <button onclick="RemoveClick()" class="btn btn-danger">Remove</button>
+                        <button onclick="ClearClick()" class="btn btn-success">Clear All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

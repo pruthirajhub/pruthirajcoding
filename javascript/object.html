@@ -1,0 +1,18 @@
+<script>
+    var product = {
+        "Name" : "Samsung TV",
+        "Price" : 4500.11,
+        "Stock" : true,
+        "Rating" : {"Rate" : 4.2, "Count" : 6000},
+        "Shipped To" : ["Delhi", "Hyd" ]
+    };
+    product.Name = "Samsung LED TV"; 
+    product.Rating.Rate = 4.5
+    document.write(`
+        Name : ${product.Name}<br>
+        Price : ${product.Price}<br>
+        Stock : ${product.Stock}<br>
+        Rating : ${product.Rating.Rate}[${product.Rating.Count}]<br>
+        Shipped TO : ${product.ShippedTo.toString()}
+    `);
+</script>

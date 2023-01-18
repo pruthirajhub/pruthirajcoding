@@ -15,3 +15,24 @@
     }
 </script>
 <hr>
+<script>
+    var values = [1100, 2200 ,33300, 44000];
+    document.write(values.toString() + "<br>");
+    document.write(values.join("-----"));
+    values.map(function(value){
+        document.write(`
+            <li>${value}</li>
+        `);
+    });
+    document.write(values.slice(2) + "<br>");
+</script>
+<hr>
+<script>
+    var values = [23000, 45000, 68000, 25000, 48000];
+    for(var item of values){
+        document.write(item + "<br>");
+    }
+    for (var property in values){
+        document.write(`[${property}]-${values[property]}<br>`);
+    }
+</script>
