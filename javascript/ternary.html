@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <script>
-        function StockChange(){
-            var lblStock = document.getElementById("lblStock");
-            var stock = document.getElementById("stock");
-            lblStock.innerHTML = (stock.checked)?"Available":"Out of Stock";
-            /*
-            if(stock.checked){
-                lblStock.innerHTML = "Available";
-            }else {
-                lblStock.innerHTML = "Out of Stock";
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <script>
+            function StockChange(){
+                var lblStock = document.getElementById("lblStock");
+                var stock = document.getElementById("stock");
+                lblStock.innerHTML = (stock.checked)?"Available":"Out of Stock";
+                /*
+                if(stock.checked){
+                    lblStock.innerHTML = "Available";
+                }else {
+                    lblStock.innerHTML = "Out of Stock";
+                }
+                */
             }
-            */
-        }
-        function bodyLoad(){
-            document.getElementById("lblButton").className ="bi bi-arrow-down";
-        }
-        function SortClick(){
-            var lblButton = document.getElementById("lblButton");
-            lblButton.className = (lblButton.ClassName=="bi bi-arrow-up")?"bi bi-arrow-down":"bi bi-arrow-up";
-        }
-    </script>
-</head>
-<body class="container-fluid" onload="bodyLoad()">
-    <h2>Ternary</h2>
-    <div class="form-switch">
-        <input type="checkbox" id="stock" onchange="StockChange()" class="form-check-input"><span id="lblStock">Out of Stock</span>
-    </div>
-    <h2>Toggle</h2>
-    <button class="btn btn-primary" onclick="SortClick()">
-        Sort
-        <span id ="lblButton"></span>
-    </button>
-</body>
+            function bodyLoad(){
+                document.getElementById("lblButton").className ="bi bi-arrow-down";
+            }
+            function SortClick(){
+                var lblButton = document.getElementById("lblButton");
+                lblButton.className = (lblButton.ClassName=="bi bi-arrow-up")?"bi bi-arrow-down":"bi bi-arrow-up";
+            }
+        </script>
+    </head>
+    <body class="container-fluid" onload="bodyLoad()">
+        <h2>Ternary</h2>
+        <div class="form-switch">
+            <input type="checkbox" id="stock" onchange="StockChange()" class="form-check-input">
+            <span id="lblStock">Out of Stock</span>
+        </div>
+        <h2>Toggle</h2>
+        <button class="btn btn-primary" onclick="SortClick()">Sort
+            <span id ="lblButton"></span>
+        </button>
+    </body>
 </html>

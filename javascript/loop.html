@@ -1,0 +1,46 @@
+<script>
+    var i=5;
+    for(; i<=10; i++)
+    {
+        document.write(i + "<br>");
+    }
+</script>
+<hr><hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var menu = [
+            {Category: "Electronics", Products: ["TV", "Mobile"]},
+            {Category: "Footwear", Products: ["Casuals", "Sneakers"]}
+        ];
+        function bodyLoad()
+        {
+            for(var i=0; i<menu.length; i++)
+            {
+                var ol_li = document.createElement("li");
+                ol_li.innerHTML = menu[i].Category;
+                document.querySelector("ol").appendChild(ol_li);
+                for(j=0; j<menu[i].Products.length; j++)
+                {
+                    var ul = document.createElement("ul");
+                    var ul_li = document.createElement("li");
+                    ul_li.innerHTML = menu[i].Products[j];
+                    ul.appendChild(ul_li);
+                    ol_li.appendChild(ul);
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <ol>
+        
+    </ol>
+</body>
+</html>
+</hr></hr>

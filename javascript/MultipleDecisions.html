@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Login</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .form-login{
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+        }
+    </style>
+    <script>
+         var userDetails = {
+            "Email": "david@gmail.com",
+            "Mobile": "+917978759755",
+            "Password": "david@11"
+         } 
+         var flag = "";
+         function ContinueClick(){
+            var userid = document.getElementById("UserId").value;
+            var passwordContainer = document.getElementById("passwordContainer");
+            var userContainer = document.getElementById("userContainer");
+           
+            if(userDetails.Email==userid){
+                flag = `Login Success With Your Email ${userid}. Verification Mail Sent.`;
+                passwordContainer.style.display = "block";
+                userContainer.style.display = "none";
+            } else if(userDetails.Mobile==userid){
+                flag = `Login Success With Your Mobile ${userid}. OTP sent to your mobile.`;
+                passwordContainer.style.display = "block";
+                userContainer.style.display = "none";
+            } else{
+                document.getElementById("userMsg").innerHTML = "Invalid Email or Mobile";
+            }
+         }
+         function LoginClick(){
+            var password = document.getElementById("Password").value;
+            if(password==userDetails.Password){
+                document.write(flag);
+            }else {
+                document.getElementById("msgPwd").innerHTML = "Invalid Password";
+            }
+         }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="form-login">
+        <div style="border:2px solid black; padding:20px; width:400px;">
+            <h2>SignIn</h2>
+           <div id="userContainer">
+                <label class="form-label">Your email or mobile</label>
+                <div>
+                    <input type="text" id="UserId" class="form-control">
+                    <div id="userMsg" class="text-danger"></div>
+                </div>
+                <div class="mt-4">
+                    <button onclick="ContinueClick()" class="btn btn-warning w-100">Continue</button>
+                </div>
+           </div>
+           <div id="passwordContainer" style="display: none;"> 
+                <label class="form-label">Your Password</label>
+                <div>
+                    <input id="Password" type="password" class="form-control">
+                    <div id="msgPwd" class="text-danger"></div>
+                </div>
+                <div class="mt-4">
+                    <button onclick="LoginClick()" class="btn btn-warning w-100">Login</button>
+                </div>
+           </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var menu = [
+            {Category: "Electronics", Products: ["TV", "Mobile"]},
+            {Category: "Footwear", Products: ["Casuals", "Sneakers"]}
+        ];
+        function bodyLoad(){
+            for(var item of menu){
+                var ol_li = document.createElement("li");
+                ol_li.innerHTML = item.Category;
+                document.querySelector("ol").appendChild(ol_li); 
+            }
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <ol>
+        
+    </ol>
+</body>
+</html>
+</hr></hr>

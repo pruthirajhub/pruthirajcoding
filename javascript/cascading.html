@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascading Dropdown</title>
+    <style>
+        select{
+            width:200px;
+            font-size: 20px;
+            margin-right:20px;
+        }
+    </style>
+    <script>
+        var categories = ["Select a Category", "Electronics", "Footwear", "Fashion"];
+        var electronics = ["Select Electronics", "Mobiles", "Watches"];
+        var footwear = ["Select Footwear", "Casuals", "Sneakers"];
+        var fashion = ["Select Fashion", "Men's Clothing", "Women's Clothing", "Kid's Clothing"];
+        var products = [];
+        function LoadCategories(){
+            var lstCategories = document.getElementById("lstCategories");
+            for(var item of categories)
+            {
+                var option = document.createElement("option");
+                option.text= item;
+                option.value= item;
+                lstCategories.appendChild(option);
+            }
+        }
+        function LoadProducts(){
+            var  lstProducts = document.getElementById("lstProducts");
+            lstProducts.innerHTML = "";
+            for(var item of products){
+                var option = document.createElementById("option");
+                option.text = item;
+                option.value = item;
+                lstProducts.appendChild(option);
+            }
+        }
+        function bodyload()
+         {
+            LoadCategories();
+        }
+        function CategoryChanged(){
+            var categoryName =  document.getElementById("lstCategories").values;
+            switch(categoryName)
+            {
+                case "Electronics":
+                products = electronics;
+                LoadProducts();
+                break;
+                case "Footwear":
+                products = footwear;
+                LoadProducts();
+                break;
+                case "Fashion":
+                products = fashion;
+                LoadProducts();
+                break;
+                default:
+                products = ["Please Select a Category"];
+                LoadProducts();
+                break;
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div>
+        <select id="lstCategories" onchange="CategoryChanged()">
+
+        </select>
+        <select id="lstProducts">
+
+        </select>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forward Jump</title>
+        <script>
+            var userDetails = {
+                "CardNumber" : "4448901",
+                "Cvv": "555",
+                "Expiry" : "2024"
+            }
+            function VerifyCard(){
+                var card = document.getElementById("txtCard").value;
+                if(userDetails.CardNumber==card){
+                    document.getElementById("txtCvv").disabled = false;
+                    document.getElementById("txtCvv").focus();
+                    document.getElementById("txtCard").readOnly=true;
+                }
+            }
+            function VerifyCvv(){
+                var cvv = document.getElementById("txtCvv").value;
+                if(userDetails.Cvv==cvv){
+                    document.getElementById("lstExpiry").disabled=false;
+                    document.getElementById("lstExpiry").focus();
+                    document.getElementById("txtCvv").readOnly=true;
+                }
+            }
+            function VerifyExpiry(){
+                var expiry = document.getElementById("lstExpiry").value;
+                if(userDetails.Expiry==expiry){
+                    document.getElementById("btnPay").disabled = false;
+                    document.getElementById("lstExpiry").readonly = true;
+                }
+            }
+            function PayClick(){
+                document.write("Payment Success...");
+            }
+            function ToggleCard (){
+                var optCard = document.getElementById("optCard");
+                if(optCard.checked){
+                    document.getElementById("cardContainer").style.display = "block";
+                    document.getElementById("UpiContainer").style.display = "none";
+                }
+            }
+            function ToggleUpi(){
+                var optUpi = document.getElementById("optUpi");
+                if(optUpi.checked){
+                    document.getElementById("UpiContainer").style.display = "block";
+                    document.getElementById("cardContainer").style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Payment Details </legend>
+            <div style="margin-bottom:50px">
+                <span><input type="radio" onchange="ToggleCard()" id="optCard" name="pay" checked>Credit/Debit Card</span>
+                <span><input type="radio" onchange="ToggleUpi()" id="optUpi" name="pay"> UPI</span>
+            </div>
+            <div id="cardContainer">
+                <dl>
+                    <dt>Card Number</dt>
+                    <dd><input type="text" onkeyup="VerifyCard()" id="txtCard" size="30"></dd>
+                    <dt>Cvv</dt>
+                    <dd><input type="text" onkeyup="VerifyCvv()" disabled id="txtCvv" size="4"></dd>
+                    <dt>Expiry</dt>
+                    <dd>
+                        <select disabled onchange="VerifyExpiry()" id="lstExpiry">
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                        </select>
+                    </dd>
+                </dl>
+                <button disabled id="btnPay" onclick="PayClick()">Pay</button>
+            </div>
+            <div id="UpiContainer" style="display:none">
+                Your UPI ID :
+                <input type="text"><button>Pay</button>
+            </div>
+        </fieldset>
+    </body>
+</html>

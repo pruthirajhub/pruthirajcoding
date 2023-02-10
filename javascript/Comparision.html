@@ -1,0 +1,26 @@
+Comparision Operators
+<hr>
+<br>
+<script>
+    var x = 10;
+    var y = "10";
+    document.write(x=== parseInt(y));
+</script>
+<br><hr><hr>
+Logical Operators
+<br>
+<hr>
+<script>
+    var products = [
+        {Name: "TV", Category: "Electronics"},
+        {Name: "Nike", Category: "Footwear"},
+        {Name: "Shirt", Category: "Fashion"},
+        {Name: "Watch", Category: "Electronics"}
+    ];
+    var result = products.filter(function(product){
+        return product.Category=="Electronics" || product.Category=="Fashion"; 
+    })
+    for (var item of result){
+        document.write(item.Name + "<br>");
+    }
+</script>
