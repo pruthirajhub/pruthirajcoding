@@ -15,14 +15,38 @@
                 var ol_li = document.createElement("li");
                 ol_li.innerHTML = item.Category;
                 document.querySelector("ol").appendChild(ol_li); 
+                for(var product of item.Products){
+                    var ul = document.createElement("ul");
+                    var ul_li = document.createElement("li");
+                    ul_li.innerHTML = product;
+                    ul.appendChild(ul_li);
+                    ol_li.appendChild(ul);
+                }
             }
         }
     </script>
 </head>
 <body onload="bodyLoad()">
     <ol>
-        
+         
     </ol>
 </body>
 </html>
-</hr></hr>
+<hr><hr> 
+<script>
+    var i=1;
+    while(i<=10)
+    {
+        document.write(i + "<br>");
+        i++;
+    }
+</script>
+<hr>
+<script>
+    var i=1;
+    do 
+    {
+        document.write(i + "<br>");
+        i++;
+    } while(i<=10);
+</script>
