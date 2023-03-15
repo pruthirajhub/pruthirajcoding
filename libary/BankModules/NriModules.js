@@ -1,0 +1,1 @@
+export const Welcome = (username) => `Hello ! ${username} Welcome to NRI Banking`; 

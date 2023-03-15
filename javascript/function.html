@@ -1,0 +1,71 @@
+<script>
+    function Add(a,b) {
+        var c = a + b;
+        document.write("c=" + c + "<br>");
+    }
+    function Addition(a,b) {
+        return a + b; 
+    }
+    Add(10,30);
+    document.write(Addition(50,60));
+</script>
+<hr><hr>
+<script>
+    function Hello(str){
+        return `Hello ! ${str}`;
+    }
+    document.write(Hello("john"))
+</script>
+<hr><hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        dt{
+            font-weight: bold;
+        }
+        dd {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script> 
+        function Captcha(){
+            var a = Math.random() * 10;
+            var b = Math.random() * 10;
+            var c = Math.random() * 10;
+            var d = Math.random() * 10;
+            var e = Math.random() * 10;
+            var f = Math.random() * 10;
+            return `${Math.round(a)} ${Math.round(b)} ${Math.round(c)} ${Math.round(d)} ${Math.round(e)} ${Math.round(f)}`;
+        }
+        function NewCode(){
+            document.getElementById("code").innerHTML = Captcha();
+        }
+        function bodyload(){
+            NewCode();
+        }
+        function Reload(){
+            NewCode();
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2> <span class="bi bi-person-fill"></span>User Login</h2>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text"></dd>
+        <dt>Password</dt>
+        <dd><input type="password"></dd>
+        <dt>Verify Code <button onclick="Reload()" class="bi bi-arrow-clockwise"></button></dt>
+        <dd id="code">
+
+        </dd>
+    </dl>
+    <button>Login</button>
+</body>
+</html>

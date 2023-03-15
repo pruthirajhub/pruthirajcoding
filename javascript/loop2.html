@@ -1,0 +1,43 @@
+<script>
+    try {
+        var x = 10;
+        var y = -3;
+        if(y==0){
+            throw "can't Divide By Zero <br>";
+        }
+        if(y<0){
+            throw "can't Divide Using -ve Number <br>";
+        }
+        if(y>x){
+            throw "Number Too Large..<br>";
+        }
+        var z = x/y;
+        document.write("Division=" + z + "<br>");
+    }
+    catch(ex) {
+        document.write(ex);
+    }
+    finally{
+        document.write("Program End")
+    }
+</script>
+<hr><hr>
+<script>
+    function PrintNumbers(howMany){
+        for(var i=1; i<=howMany; i++){
+            document.write(i + "<br>");
+        }
+    }
+    PrintNumbers(5);
+    PrintNumbers(20);
+</script>
+<hr>
+<hr>
+<script>
+    function PrintNumbers(start, end){
+        for(var i=start; i<=end; i++){
+            document.write(i + "<br>");
+        }
+    }
+    PrintNumbers(4,10 );
+</script>

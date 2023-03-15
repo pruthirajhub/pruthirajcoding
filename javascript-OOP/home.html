@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module System</title>
+    <script src="../libary/HelloModule.js"></script>
+    <script type="module">
+        import {Welcome, Addition} from '../libary/HelloModule.js';
+        document.querySelector("p").innerHTML = Welcome("john") + "<br>" + "Addition=" +Addition(20,40);
+    </script>
+</head>
+<body>
+    <h2>Module System</h2>
+    <p></p>
+</body>
+</html>

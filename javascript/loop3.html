@@ -1,0 +1,44 @@
+<script>
+    function ProductsDetails(id,name,price,stock,cities,rating)
+    {
+        document.write(`
+            Product Id : ${id} <br>
+            Name : ${name} <br>
+            Price : ${price} <br>
+            Stock: ${(stock==true)?"Available":"Out of Stock"}, <br>
+            Cities: ${cities.join("->")} <br>
+            Rating: ${rating.rate}[${rating.count}]
+        `); 
+    }
+    ProductsDetails(101,"Samsung TV", 45000.33, true, ["Delhi","Odisha"], {rate:4.2, count:2400});
+</script>
+<hr><hr>
+<script>
+    function VerifyUser(...userDetails)
+    {
+        var [password, success, failure] = userDetails;
+        if(password=="admin") {
+            success();
+        } else {
+            failure();
+        }
+    }
+    VerifyUser(prompt('Enter Password'),function(){
+        document.write("Login Success");
+    }, function(){
+        document.write("Invalid Password");
+    })
+</script>
+<hr><hr>
+<script>
+    function Details(title, ...product){
+        document.write(`<h2>${title}</h2>`);
+        var [id, name, price] = product;
+        document.write(`
+            Id : ${id} <br> 
+            Name : ${name} <br>
+            Price : ${price}
+        `);
+    }
+    Details("Products Details", 101, "TV", 24000.44);
+</script>

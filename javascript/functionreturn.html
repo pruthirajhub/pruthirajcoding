@@ -1,0 +1,38 @@
+<script>
+    function Factorial(n){
+        if(n==0){
+            return 1;
+        } 
+        return n * Factorial(n-1);
+    }
+    document.write(`Factorial of 4 is ${Factorial(4)}`);
+</script>
+<hr>
+<hr>
+<script>
+    function OuterFunction(){
+        var msg = "Massage from Outer Function";
+        function InnerFunction(){
+            var outerMessage = msg;
+            var innerMsg = "Massage from Inner Function";
+            return innerMsg + "<br>" + outerMessage;
+        }
+        var innerMessage = InnerFunction();
+        document.write(innerMessage);
+    }
+    OuterFunction();
+</script>
+<hr><hr>
+<script>
+    (function(msg){
+        document.write(msg);
+    })("This is an anonymous function");
+</script>
+<hr>
+<hr>
+<script>
+    var welcome = function(){
+        document.write("Welcome to Javascript");
+    }
+    welcome();
+</script>
