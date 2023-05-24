@@ -1,0 +1,43 @@
+<head>
+    <script>
+        function InsertClick(button, e, product, colors){
+            document.write(`
+                Button Id : ${button.id} <br>
+                Button Name : ${button.name} <br>
+                Button Class : ${button.className} <br>
+                Click on X axis: ${e.clientX} <br>
+                Clicked with Ctrl: ${e. ctrlKey} <br>
+                Product Id : ${product.Id} <br>
+                Product Price: ${product.Name} <br>
+                Colors : ${colors} <br>
+            `);
+        }
+    </script>
+</head>
+<body>
+    <button id="btnInsert" name="Insert" class="btn btn-primary" onclick="InsertClick(this, event,{Id:1, Name: 'TV'}, ['Red', 'Green', 'Blue'])" >Insert</button>
+    <p>http://www.amazon.in</p>
+</body>
+<hr>
+<head>
+    <script>
+        function Database(name){
+            switch(name){
+                case "Insert":
+                document.write("Record Inserted");
+                break;
+                case "Update":
+                document.write("Record Updated");
+                break;
+                case "Delete":
+                document.write("Record Deleted");
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button name="Insert" onclick="Database(this.name)">Insert</button>
+    <button name="Update" onclick="Database(this.name)">Update</button>
+    <button name="Delete" onclick="Database(this.name)">Delete</button>
+</body>

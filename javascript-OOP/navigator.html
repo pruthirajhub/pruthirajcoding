@@ -1,0 +1,42 @@
+<script>
+    document.write(`
+        Browser Family : ${navigator.appName}<br>
+        Version        : ${navigator.appVersion} <br>
+        Language       : ${navigator.language} <br>
+        Platform       : ${navigator.platform} <br>
+        Online         : ${navigator.online} <br>
+        Cookies Status : ${(navigator.cookieEnabled==true)?"Cookie Enabled":"Cookie Disabled<br>Please Enable Cookies on Your Browser"} <br> 
+    `)
+</script>
+<hr><hr>
+<h2>Plugins</h2>
+<script>
+    for(var item of navigator.plugins){
+        document.write(item.name + "<br>");
+    }
+    if(navigator.plugins["Chrome PDF Viewer"]==undefined){
+        document.write("Please Install PDF Viewer Plugin")
+    } else {
+        document.write("You Can Watch PDF Documents on your browser");
+    }
+</script>
+<hr><hr>
+<h2>MimeTypes</h2>
+<script>
+    for(var item of navigator.mimeTypes){
+        document.write(item.type + "<br>");
+    }
+</script>
+<hr><hr>
+<h2>Location</h2>
+<script>
+    function GetClientLocation(){
+        navigator.geolocation.getCurrentPosition((position)=>{
+            document.write(`
+                Latitude : ${position.coords.latitude} <br>
+                Longitude: ${position.coords.longitude}<br>
+            `);
+        })
+    }
+    GetClientLocation();
+</script>

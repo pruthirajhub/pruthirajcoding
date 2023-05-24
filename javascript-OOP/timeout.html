@@ -1,0 +1,25 @@
+<head>
+    <script>
+        function Msg1(){
+            document.querySelector("p").innerHTML = "Hello ! - Msg1";
+        }
+        function Msg2(){
+            document.querySelector("p").innerHTML = "Ho are you? - Msg2";
+        }
+        function Msg3(){
+            document.querySelector("p").innerHTML = "Welcome to JS - Msg3";
+        }
+        function bodyLoad(){
+          m1 = setTimeout(Msg1, 4000);
+          m2 = setTimeout(Msg2, 7000);
+          m3 = setTimeout(Msg3, 12000);
+        }
+        function RemoveClick(){
+            clearTimeout(m2);
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <button onclick="RemoveClick()">Remove Msg2</button>
+    <p align="center"></p>
+</body>

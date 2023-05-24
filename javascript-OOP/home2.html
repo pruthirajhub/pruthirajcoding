@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Database
+        {
+            constructor(connectionString){
+                for(var property in connectionString){
+                    document.querySelector("p").innerHTML += `${property} : ${connectionString[property]} <br>`;
+                }
+            }
+            // constructor(dbName){
+            //     alert(`Connected with ${dbName} Database..`);
+            // }
+            Insert(){
+                document.querySelector("p").innerHTML += "Record Inserted";
+            }
+            Delete(){
+                document.querySelector("P").innerHTML += "Record Deleted";
+            }
+        }
+        function InsertClick(){
+            // var obj = new Database("Oracle");
+            var obj = new Database({UserName:"Scott", Password:"tiger", DatabaseName: "EmployeeDb", Source:"Oracle"});
+            obj.Insert();
+        }
+        function DeleteClick(){
+            // var obj = new Database("Oracle");
+            var obj = new Database({Host: "localhost", UserId: "root", Password:"1234", DatabaseName:"StudentsDb", Source:"MySql"});
+            obj.Delete();
+        }
+    </script>
+</head>
+<body>
+    <button onclick="InsertClick()">Insert</button>
+    <button onclick="DeleteClick()">Delete</button>
+    <p></p>
+</body>
+</html>

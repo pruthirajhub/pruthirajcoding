@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Events</title>
+    <script>
+        function VerifyUser(){
+            var username = document.getElementById("UserName").value;
+            var userError = document.getElementById("UserError");
+            fetch('../data/users.json')
+            .then(response=>response.json())
+            .then(data=>{
+                for(var user of data){
+                    if(user.UserName==username){
+                        userError.innerHTML = "User Name Taken - Try Another".fontcolor('red');
+                        break;
+                    } else {
+                        userError.innerHTML = "User Name Available".fontcolor('green');
+                    }
+                }
+            })
+        }
+        function VerifyCaps(e) {
+            var pwdWarning = document.getElementById("pwdWarning");
+            if(e.keyCode>=65 && e.keyCode<=90){
+                pwdWarning.style.display = "block";
+            }  else {
+                pwdWarning.style.display = "none";  
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+       <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" onkeyup="VerifyUser()" id="UserName"></dd>
+        <dd id="UserError"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" onkeypress="VerifyCaps(event)" id="Password"></dd>
+        <dd style="color:gold; display:none;" id="pwdWarning">
+            <span  class="bi bi-exclamation-triangle-fill"></span> Warning : Caps ON
+        </dd>
+    </dl>
+</body>
+</html>

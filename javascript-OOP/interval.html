@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function GetImages(id){
+            fetch(`https://fakestoreapi.com/products/${id}`)
+            .then(response=> response.json())
+            .then(data=>{
+                document.getElementById("pic").src = data.image;
+                document.getElementById("price").innerHTML = "&#8377;" + data.price;
+            })
+        }
+        var count=1;
+        function SlideShow(){
+            count++;
+            GetImages(count);
+            document.getElementById("slider").value=count;
+        }
+        var flag;
+        function PlayClick(){
+            flag = setInterval(SlideShow, 5000);
+            document.getElementById("msg").innerHTML = "Slide Show - Started";
+        }
+        function PauseClick(){
+            clearInterval(flag); 
+            document.getElementById("msg").innerHTML = "Slide Show - Paused";
+        }
+        function bodyLoad(){
+            GetImages(1);
+        }
+        function SliderChange(){
+            var id = document.getElementById("slider").value;
+            GetImages(id);
+        }
+    </script>
+</head>
+<body onload="bodyLoad()" class="container-fluid d-flex justify-content-center">
+    <div class="card mt-2 w-50">
+        <div class="card-header">
+            <p id="msg"></p>
+        </div>
+        <img id="pic" class="card-img-top" height="300">
+        <div class="card-body">
+            <p id="price"></p>
+        </div>
+        <div class="card-footer text-center">
+            <div>
+                <input type="range" onchange="SliderChange()" id="slider" value="1" min="1" max="20" class="form-range">
+            </div>
+            <div>
+                <button onclick="PlayClick()" class="btn btn-danger">
+                    <span class="bi bi-play"></span>
+                </button>
+                <button onclick="PauseClick()" class="btn btn-danger">
+                    <span class="bi bi-pause"></span>
+                </button>
+           </div>
+        </div>
+    </div>
+</body>
+</html>

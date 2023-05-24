@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HDFC Bank</title>
-    <script src="../libary/BankModules/NriModules.js"></script>
-    <script src="../libary/BankModules/PersonalModule.js"></script>
-    <script type="module">
-        import { Welcome } from '../libary/BankModules/NriModules.js';
-        import { title, login} from '../libary/BankModules/PersonalModule.js';
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HDFC Bank</title>
+        <script src="../libary/BankModules/NriModules.js"></script>
+        <script src="../libary/BankModules/PersonalModule.js"></script>
+        <script type="module">
+            import { Welcome } from '../libary/BankModules/NriModules.js';
+            import { title, login } from '../libary/BankModules/PersonalModule.js';
 
-        document.querySelector("p").innerHTML = `
-            <span>${title('Personal Banking')}</span>
-            <span>|</span>
-            <span>${Welcome("john")}</span>
-            <hr>
-            ${login()}
-        `
-    </script>
-</head>
-<body>
-    <h2>HDFC Bank</h2>
-    <p></p>
-</body>
+            document.querySelector("p").innerHTML = `
+                <span>${title('Personal Banking')}</span>
+                <span>|</span>
+                <span>${Welcome("john")}</span>
+                <hr>
+                ${login()}
+            `
+        </script>
+    </head>
+    <body>
+        <h2>HDFC Bank</h2>
+        <p></p>
+    </body>
 </html>

@@ -1,0 +1,21 @@
+<script>
+    class Product
+    {
+        Name = " ";
+        Price = 45000.44;
+        Stock = true;
+        Rating = {Rate:4.2, Count:5600}
+    }
+    let tv = new Product;
+    tv.Name = "Samsung TV";
+    document.write
+     (`
+        Name=${tv.Name}
+        <br>
+        Price=${tv.Price}
+        <br>
+        Stock=${(tv.Stock==true)?"Available":"Out Of Stock"}
+        <br>
+        Rating=${tv.Rating.Rate} [${tv.Rating.Count}]
+    `);
+</script>

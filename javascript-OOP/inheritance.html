@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class HDFC_Version1 {
+            Personal = "Personal Banking - For General Customers";
+            NRI = "NRI Banking - For NRI Customers";
+            Print(){
+                document.querySelector("p").innerHTML = `${this.Personal} <br> ${this.NRI} <br>`;
+            }
+        }
+        class HDFC_Version2 extends HDFC_Version1 {
+            Loans = "Loans- Housing, Car, Personal";
+            Print(){
+                super.Print();
+                document.querySelector("p").innerHTML += this.Loans +"<br>";
+            }
+        }
+        class HDFC_Version3 extends HDFC_Version2 {
+            AGRI = "AGRI - Govt. Schemes for Customers"; 
+            Print(){
+                super.Print();
+                document.querySelector("p").innerHTML += this.AGRI + ">br>";
+            }
+        }
+        function InstallClick(){
+            var version = document.getElementById("lstVersions").value;
+            switch(version) {
+                case "ver1":
+                    let obj1 = new HDFC_Version1();
+                    obj1.Print();
+                    break;
+                    case "ver2":
+                    let obj2 = new HDFC_Version2();
+                    obj2.Print();
+                    break;
+                    case "ver3":
+                    let obj3 = new HDFC_Version3();
+                    obj3.Print();
+                    break;   
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Install HDFC Bank App</legend>
+        <h3>Select Version</h3>
+        <select id="lstVersions">
+            <option value="ver1">Version-1 2020</option>
+            <option value="ver2">Version-2 2021</option>
+            <option value="ver3">Version-3 2022</option>
+        </select>
+        <button onclick="InstallClick()">Install</button>
+    </fieldset>
+    <hr>
+    <p id="details"></p>
+</body>
+</html>

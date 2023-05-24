@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <noscript>
+        Please Enable Javascript on Your Browser
+    </noscript>
+    <br>
+    <button onclick="window.print()">Print</button>
+</body>
+</html>
+<hr><hr>
+<script>
+    document.write(`
+        Server Name or Ip :${location.host}<br>
+        Protocol          :${location.protocol}<br>
+        Port Number       :${location.port} <br>
+        URL               :${location.href} <br>
+        File Path         :${location.pathname} <br>
+    `)
+    function GetProtocol(){
+        switch(location.protocol){
+            case "http:" : 
+                    document.write("You are accessing form web Server");
+                    break;
+            case "file:"  :
+                    document.write("You are using a file server - Please use web Server");
+                    break;
+        }
+    }
+    GetProtocol();
+</script>
